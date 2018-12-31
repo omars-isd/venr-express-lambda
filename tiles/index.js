@@ -1,7 +1,11 @@
 var express = require('express');
 var app = express();
 
-app.get('/{x}/{y}/{z}', function (req, res) {
+app.get('/', function (req, res) {
+
+  const x = req.query["x"];
+  const y = req.query["y"];
+  const z = req.query["z"];
 
   res.send({
     "Output": `${x}, ${y}, ${z}`
