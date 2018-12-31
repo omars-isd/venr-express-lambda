@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
     const y = Number.parseInt(req.query["y"]);
     const z = Number.parseInt(req.query["z"]);
 
-    if (x == null || y == null || z == null) {
+    if (Number.isNaN(x) || Number.isNaN(y) || Number.isNaN(z)) {
       throw new Error("Invalid parameters. Set x, y, and z to valid values.");
     }
 
