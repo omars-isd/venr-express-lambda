@@ -7,6 +7,11 @@ app.get('/', function (req, res) {
   const y = req.query["y"];
   const z = req.query["z"];
 
+  if (x == null || y == null || z == null) {
+    res.status(500).send("Invalid parameters. Set x, y, and z.")
+    return;
+  }
+
   res.send({
     "Output": `${x}, ${y}, ${z}`
   });
